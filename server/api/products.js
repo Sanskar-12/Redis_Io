@@ -9,4 +9,17 @@ const getProducts = () =>
     }, 2000);
   });
 
-export { getProducts };
+const getProductById = (id) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({
+        product: {
+          id: id,
+          name: `Product ${id}`,
+          price: Math.floor(Math.random() * id * 100),
+        },
+      });
+    }, 2000);
+  });
+
+export { getProducts, getProductById };
